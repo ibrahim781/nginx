@@ -16,7 +16,7 @@ pipeline {
                     sh 'docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 343218187259.dkr.ecr.us-east-1.amazonaws.com'
                     
                     // Build the Docker image
-                    sh 'docker build -t nginx-repo .'
+                    sh 'docker build -t nginx-repo:$BUILD_ID .'
                     
                     // Tag the Docker image with the build ID
                     sh 'docker tag nginx-repo:"$BUILD_ID" 343218187259.dkr.ecr.us-east-1.amazonaws.com/nginx-repo:"$BUILD_ID"'
