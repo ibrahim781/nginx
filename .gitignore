@@ -1,0 +1,12 @@
+# Node.js or Nginx-related files to ignore
+node_modules/
+.DS_Store
+*.log
+
+# Docker and Jenkins related files
+docker-compose.yml
+Jenkinsfile
+*.env
+
+# npm package lock file (optional)
+package-lock.json
