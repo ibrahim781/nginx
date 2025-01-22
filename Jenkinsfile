@@ -13,7 +13,7 @@ pipeline {
           sh 'docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 343218187259.dkr.ecr.us-east-1.amazonaws.com'
           sh 'docker build -t nginx-repo .'
           sh 'docker tag nginx-repo:""$BUILD_ID""'
-          SH 'docker push 343218187259.dkr.ecr.us-east-1.amazonaws.com/nginx-repo:""$BUILD_ID""'
+          sh 'docker push 343218187259.dkr.ecr.us-east-1.amazonaws.com/nginx-repo:""$BUILD_ID""'
         }
       }
     }
